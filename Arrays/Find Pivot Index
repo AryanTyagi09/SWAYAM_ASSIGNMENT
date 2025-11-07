@@ -1,0 +1,25 @@
+C++
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) { 
+        int total_sum=0, prefix=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            total_sum+=nums[i];
+
+        }
+      
+        for(int i=0;i<nums.size();i++)
+        {
+            
+            
+            if(prefix==(total_sum-prefix-nums[i]))
+            return i;
+            else
+            prefix+=nums[i];
+            
+        }
+        return -1;
+        
+    }
+}
